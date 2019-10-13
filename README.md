@@ -32,3 +32,88 @@ companies. The company API should get it's own
 list, get, patch, update and delete methods. It
 should also be possible to filter the member list
 method based on a company id.
+
+
+API Documentation
+The description of the REST APIs in the project are given below
+Get Members List:
+Get a list of members matching the additional filters provided. If no filter is provided, returns all available members.
+URL: http://127.0.0.1:8000/memberslist/
+Method Type: GET
+Required Parameters: None
+Optional Parameters: 
+	•	firstName
+	•	lastName
+	•	companyName
+	•	companyAddress
+Response:
+The response object consists of the following attributes.
+	•	Status
+	•	List of members matching the criteria.
+Get Member by Id:
+Returns a single member matching the id provided. If no member exists returns an error message.
+URL: http://127.0.0.1:8000/getmemberbyid/
+Method Type: GET
+Required Parameters: 
+	•	id
+Optional Parameters: None
+Response:
+The response object consists of the following attributes.
+	•	Status
+	•	Member matching the id parameter.
+
+Patch Member by Id:
+Patched certain fields of the member matching the given id. The fields to patch are provided by the user as optional parameters.
+URL: http://127.0.0.1:8000/patchmember/
+Method Type: PATCH
+Required Parameters: 
+	•	Id
+	•	fieldsToPatch
+Optional Parameters: 
+	•	firstName
+	•	infix
+	•	lastName
+	•	photo
+	•	companyName
+	•	jobTitle
+	•	companyPhoto
+	•	companyAddress
+Response:
+The response object consists of the following attributes.
+	•	Status
+	•	Patched Member.
+
+Update Member by Id:
+Updates all the fields of the members matching the id.
+URL: http://127.0.0.1:8000/updatemember/
+Method Type: POST
+Required Parameters: 
+	•	Id
+	•	fieldsToPatch
+	•	firstName
+	•	infix
+	•	lastName
+	•	photo
+	•	companyName
+	•	jobTitle
+	•	companyPhoto
+	•	companyAddress
+	•	
+Optional Parameters: None
+Response:
+The response object consists of the following attributes.
+	•	Status
+	•	Updated Member.
+
+Delete Member by Id:
+Deletes a member matching the id
+URL: http://127.0.0.1:8000/deletemember/
+Method Type: POST
+Required Parameters: 
+	•	Id
+Optional Parameters: None
+Response:
+The response object consists of the following attributes.
+	•	Status
+
+
